@@ -1,80 +1,70 @@
 <h1 align="center" >  VidBox App <br> ♨ [ ʀᴇᴀᴄᴛ ɴᴀᴛɪᴠᴇ ᴇxᴘᴏ ᴘʀᴏᴊᴇᴄᴛ ] ♨</h1>
 
 
-## Stage 02: Project Setup  
+## Stage 03: Project Structure  
 **Log: January 12, 2025**
 
-In this stage, the focus is on setting up the project structure, integrating NativeWind for styling, and preparing the app for further development.
+
+In this stage, we organize the project structure by creating layout files and initializing screens for authentication, tab navigation, and search functionality.
 
 ---
 
-### Step-by-Step Process  
+## Step-by-Step Process  
 
-### 1. Create `index.jsx` in the `app` Folder  
-- Created a new file named `index.jsx` inside the `app` folder. This will serve as the home page or screen for the app.  
+### 1. Create `app/(auth)/_layout.jsx`  
+- Created a `_layout.jsx` file inside the `app/(auth)` folder. This will act as the layout for the authentication screens.  
 
-- Moved all the code from `_layout.jsx` to `index.jsx` and cleared the content of `_layout.jsx`
+- Installed the **ES7+ React/Redux/React-Native snippets** plugin in the code editor for faster development.  
 
-- Installed the **ES7+ React/Redux/React-Native snippets** plugin in the code editor to speed up development.  
+- Typed `rnfe` to generate a sample functional component template.  
 
-- Typed `rnfes` to generate a sample component template.  
-
-- Updated the component and renamed it to `RootLayout`. Final code:  
+- Renamed the component to `AuthLayout`. Final code:  
 ```js
-import { StyleSheet, Text, View } from 'react-native'
+import { View, Text } from 'react-native'
 import React from 'react'
 
-const RootLayout = () => {
+const AuthLayout = () => {
   return (
     <View>
-      <Text>RootLayout</Text>
+      <Text>AuthLayout</Text>
     </View>
   )
 }
 
-export default RootLayout
-
-const styles = StyleSheet.create({})
+export default AuthLayout
 ```
 
 ---
 
-### 2. Add NativeWind v4 to the Project  
-- Integrated **NativeWind v4** for utility-first styling.  
+### 2. Add Authentication Screens  
+- Created the following files inside the `app/(auth)` folder:  
+  - `sign-in.jsx`  
+  - `sign-up.jsx`  
 
-- Followed the [NativeWind v4 Expo Router guide](https://www.nativewind.dev/getting-started/expo-router) for installation and setup.  
-
-- If `babel.config.js` does not exist in the project:  
-  - Ran the following command:  
-    ```
-    npx expo customize  
-    ```
-
-  - This command prompted options to generate different configuration files. Selected `babel.config.js` from the list.
+- Initialized each file using the `rnfe` snippet to create a functional component.  
 
 ---
 
-### 3. Add Custom Styles and Fonts  
-- Incorporated custom styling and fonts as desired. Example:  
-```js
-<Text className="text-3xl font-extrabold">Hello world!</Text>
-```
+### 3. Create Tab Navigation Screens  
+- Created a `_layout.jsx` file inside the `app/(tabs)` folder. This will act as the layout for the tab navigation.  
+
+- Created the following screen files inside the `app/(tabs)` folder:  
+  - `bookmark.jsx`  
+  - `create.jsx`  
+  - `home.jsx`  
+  - `profile.jsx`  
+
+- Initialized each file using the `rnfe` snippet to create functional components.  
 
 ---
 
-### 4. Start the Project  
-- Ran the project with the following command:  
-```
-npx expo start -c  
-```
+### 4. Add a Search Screen  
+- Created a `[query].jsx` file inside the `app/search` folder.  
 
----
-
-<p align="center">
-<img src="./_archive/screenshot_01.png" width=200>
-</p>
+- Initialized the file using the `rnfe` snippet to create a functional component.  
 
 <br/>
+
 ---
 <br/>
 
