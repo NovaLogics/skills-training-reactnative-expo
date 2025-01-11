@@ -21,6 +21,14 @@ You can view the tab navigation UI implementation here:
 <br/>
 
 ---
+
+<br/>
+
+<p align="center">
+<img src="./_archive/screenshot_01.png" width=200>
+</p>
+
+---
 <br/>
 
 🚀 See You in the Next Step for the Development Process!  
