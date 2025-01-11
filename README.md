@@ -1,1 +1,0 @@
-# skills-training-reactnative-expo
