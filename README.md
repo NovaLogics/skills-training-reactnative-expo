@@ -1,115 +1,80 @@
 <h1 align="center" >  VidBox App <br> ♨ [ ʀᴇᴀᴄᴛ ɴᴀᴛɪᴠᴇ ᴇxᴘᴏ ᴘʀᴏᴊᴇᴄᴛ ] ♨</h1>
 
-## Stage 01: Init Expo Project  
-**Log: January 11, 2025**
 
-This stage involves setting up an Expo project, configuring basic settings, and preparing for development.
+## Stage 02: Project Setup  
+**Log: January 12, 2025**
+
+In this stage, the focus is on setting up the project structure, integrating NativeWind for styling, and preparing the app for further development.
 
 ---
 
 ### Step-by-Step Process  
 
-### 1. Create a New Project Folder  
-- Created a new folder with a meaningful name for the project.  
-- Opened the folder in **Visual Studio Code** (VS Code).  
-- Launched the integrated terminal in VS Code to initialize the project.
+### 1. Create `index.jsx` in the `app` Folder  
+- Created a new file named `index.jsx` inside the `app` folder. This will serve as the home page or screen for the app.  
 
----
+- Moved all the code from `_layout.jsx` to `index.jsx` and cleared the content of `_layout.jsx`
 
-### 2. Initialize a New Expo Project  
-- Initialized a new Expo project with the React template using the following command:  
-```bash
-npx create-expo-app ./ --template blank
-```
+- Installed the **ES7+ React/Redux/React-Native snippets** plugin in the code editor to speed up development.  
 
+- Typed `rnfes` to generate a sample component template.  
 
-- Once completed, the following message appeared:  
-  ✅ Your project is ready!
-
-  **To run the project, use one of these commands:**  
-  - npm run android  
-  - npm run ios (Requires macOS. Alternatively, use the Expo Go app for iOS development without a Mac.)  
-  - npm run web  
-
-- Installed the necessary dependencies by running:  
-```bash
-npx expo install expo-router expo-status-bar expo-font expo-constants expo-linking react-native-gesture-handler react-native-screens react-native-safe-area-context
-```
-
----
-
-### 3. Update `package.json`  
-Made the following changes in the `package.json` file:
-
-- **Added:**
-```json
-"main": "expo-router/entry"
-```
-
-- **Updated Fields:**  
-
-  - **`name`**:  
-    A human-readable name for the app, visible to users on the home screen or app store listings.  
-    **Example:** `"name": "My Awesome App"`
-
-  - **`slug`**:  
-    A URL-friendly identifier for the app, commonly used by Expo services. It must be all lowercase, contain no spaces, and use hyphens (-) instead of spaces.  
-    **Example:** `"slug": "my-awesome-app"`
-
-  - **`scheme`**:  
-    A custom URL scheme for deep linking, allowing your app to handle specific links. Typically matches the `slug` or a simplified variation of it.  
-    **Example:** `"scheme": "myawesomeapp"`
-
----
-
-### 4. Set Up the Project Structure  
-- Created a new folder named `app`  
-- Created a new file named `_layout.jsx` inside `app` 
-- Moved the contents of `App.js` to a new file: `app/_layout.jsx`  
-- Deleted the original `App.js` file
-
----
-
-### 5. Start the Project  
-- Ran the project with the following command: 
-```bash 
-npx expo start -c
-```
-
-- Downloaded the **Expo Go** app on a mobile device.  
-- Scanned the QR code (ensured the mobile device and computer were on the same network).  
-- The app opened in the Expo Go app on the device.
-
----
-
-### 6. Modify the Code for Live Updates  
-- Updated the content of `app/_layout.jsx`:
+- Updated the component and renamed it to `RootLayout`. Final code:  
 ```js
-<Text>We are live!</Text>
-```
+import { StyleSheet, Text, View } from 'react-native'
+import React from 'react'
 
-- The changes reflected immediately on the connected device, thanks to Expo's live reloading feature.
+const RootLayout = () => {
+  return (
+    <View>
+      <Text>RootLayout</Text>
+    </View>
+  )
+}
+
+export default RootLayout
+
+const styles = StyleSheet.create({})
+```
 
 ---
 
-### 7. Personalize the App  
-- Added some custom elements to the app, such as:
+### 2. Add NativeWind v4 to the Project  
+- Integrated **NativeWind v4** for utility-first styling.  
+
+- Followed the [NativeWind v4 Expo Router guide](https://www.nativewind.dev/getting-started/expo-router) for installation and setup.  
+
+- If `babel.config.js` does not exist in the project:  
+  - Ran the following command:  
+    ```
+    npx expo customize  
+    ```
+
+  - This command prompted options to generate different configuration files. Selected `babel.config.js` from the list.
+
+---
+
+### 3. Add Custom Styles and Fonts  
+- Incorporated custom styling and fonts as desired. Example:  
 ```js
-  <Text>Hello world!</Text>
-  <Text>&</Text>
-  <Text>We are live!</Text>
+<Text className="text-3xl font-extrabold">Hello world!</Text>
 ```
-<br/>
+
+---
+
+### 4. Start the Project  
+- Ran the project with the following command:  
+```
+npx expo start -c  
+```
+
+---
 
 <p align="center">
 <img src="./_archive/screenshot_01.png" width=200>
 </p>
 
 <br/>
-
-### 🎉 Congratulations!  
-You've successfully set up and run your first React Native Expo app! 🚀
-
 ---
 <br/>
 
