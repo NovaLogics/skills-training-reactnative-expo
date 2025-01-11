@@ -1,7 +1,7 @@
 {
-  "name": "Skills Training - RN Expo",
-  "slug": "skills-training-rn-expo",
-  "scheme": "skills-training-rn-expo",
+  "name": "vidbox",
+  "slug": "vidbox",
+  "scheme": "vidbox",
   "version": "1.0.0",
   "main": "expo-router/entry",
   "scripts": {
