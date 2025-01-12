@@ -24,7 +24,7 @@ const SignIn = () => {
       className="bg-primary h-full">
       <ScrollView>
         <View
-          className="w-full h-full justify-center px-4 my-6">
+          className="w-full min-h-[83vh] justify-center px-4 my-6">
           <Image
             source={images.logo}
             resizeMode="contain"
