@@ -1,4 +1,4 @@
-import { SplashScreen, Stack } from 'expo-router'
+import { SplashScreen, Stack } from 'expo-router';
 import { useFonts } from 'expo-font';
 import { useEffect } from 'react';
 
