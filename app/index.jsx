@@ -2,7 +2,9 @@ import { StatusBar } from 'expo-status-bar';
 import { Text, View, ScrollView, Image } from 'react-native';
 import { Link } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { images } from '../constants';
+import { images } from "../constants";
+import { CustomButton } from '../components';
+
 
 export default function App() {
     return (
@@ -37,15 +39,23 @@ export default function App() {
                             </Text>
 
                         </Text>
-                        
+
                         <Image
                             source={images.path}
                             className="w-[136px] h-[12px] absolute -bottom-2 -right-8"
                             resizeMode="contain"
                         />
                     </View>
-                </View>
 
+                    <Text
+                        className="text-sm font-pregular text-gray-100 mt-7 text-center">
+                        Where Creativity Meets Innovation: Embark on a Journey of Limitless
+                        Exploration with Aora
+                    </Text>
+
+                    <CustomButton />
+
+                </View>
             </ScrollView>
         </SafeAreaView>
     );
