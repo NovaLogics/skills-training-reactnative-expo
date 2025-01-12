@@ -1,22 +1,27 @@
 <h1 align="center" >  VidBox App <br> ♨ [ ʀᴇᴀᴄᴛ ɴᴀᴛɪᴠᴇ ᴇxᴘᴏ ᴘʀᴏᴊᴇᴄᴛ ] ♨</h1>
 
 
-## Stage 04: Navigation Bar/Tab Items  
-**Log: January 12, 2025**
+## Stage 05: Intro/Welcome Screen  
+**Log:** January 12, 2025  
 
-
-In this stage, we implement and configure the navigation bar/tab items for the app to enable smooth navigation between different screens.
+This stage involves creating and implementing the Intro/Welcome Screen UI and building reusable custom components for a seamless user experience.  
 
 ---
 
 ## Step-by-Step Process  
 
-### 1. View Implemented Navigation/Tab UI Code  
-The navigation/tab UI has been implemented in the following file:  
-- **`app/(auth)/_layout.jsx`**  
+### 1. Intro/Welcome Screen UI  
+The Intro/Welcome Screen UI has been implemented in:  
+**File Location**: `/app/index.jsx`  
+👉 [View the `index.jsx` code here](./app/index.jsx)  
 
-You can view the tab navigation UI implementation here:  
-[**_layout.jsx →**](./app/(tabs)/_layout.jsx)  
+---
+
+### 2. Custom Component for Intro/Welcome Screen UI  
+A reusable custom component (`CustomButton`) for the Intro/Welcome Screen UI has been implemented in:  
+**File Location**: `/components/CustomButton.jsx`  
+👉 [View the `CustomButton.jsx` code here](./components/CustomButton.jsx)  
+
 
 <br/>
 
@@ -25,7 +30,7 @@ You can view the tab navigation UI implementation here:
 <br/>
 
 <p align="center">
-<img src="./_archive/screenshot_01.png" width=200>
+<img src="./_archive/screenshot_01.jpg" width=200>
 </p>
 
 ---
