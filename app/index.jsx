@@ -23,6 +23,27 @@ export default function App() {
                         resizeMode="contain"
                     />
 
+                    <View className="relative mt-5">
+                        <Text
+                            className="text-3xl text-white font-bold text-center">
+                            Discover Endless
+                            {"\n"}
+                            Possibilities with
+                            {" "}
+
+                            <Text
+                                className="text-secondary-200">
+                                VidBox
+                            </Text>
+
+                        </Text>
+                        
+                        <Image
+                            source={images.path}
+                            className="w-[136px] h-[12px] absolute -bottom-2 -right-8"
+                            resizeMode="contain"
+                        />
+                    </View>
                 </View>
 
             </ScrollView>
