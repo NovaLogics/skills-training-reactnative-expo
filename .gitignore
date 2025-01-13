@@ -36,4 +36,4 @@ yarn-error.*
 *.tsbuildinfo
 
 # appwrite config file
-lib/appwrite.js
+lib/appwrite-config.js
