@@ -3,6 +3,7 @@ import { useFonts } from 'expo-font';
 import { useEffect } from 'react';
 
 import "../global.css";
+import 'react-native-url-polyfill/auto'
 
 SplashScreen.preventAutoHideAsync();
 
