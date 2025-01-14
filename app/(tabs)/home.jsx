@@ -61,6 +61,12 @@ const Home = () => {
             {item.id}
           </Text>
         )}
+        ListEmptyComponent={() => (
+          <Text
+            className="text-2xl font-psemibold text-white">
+            Empty
+          </Text>
+        )}
       />
     </SafeAreaView>
   )
