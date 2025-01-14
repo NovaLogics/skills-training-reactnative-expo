@@ -1,19 +1,31 @@
-import { View, Text, FlatList, Image } from 'react-native'
-import React from 'react'
+import { View, Text, FlatList, Image, RefreshControl, Alert } from 'react-native'
+import { React, useState, useEffect } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 import { images } from '../../constants'
 import { EmptyState, SearchInput, Trending } from '../../components'
+import { getAllPosts } from '../../lib/appwrite'
+import useAppWrite from '../../lib/useAppWrite'
 
 
 const Home = () => {
+  const [refreshing, setRefreshing] = useState(false)
+
+  const { data: posts, refetch } = useAppWrite(getAllPosts)
+
+  const onRefresh = async () => {
+    setRefreshing(true)
+    await refetch()
+    setRefreshing(false)
+  }
+
   return (
     <SafeAreaView
       className="bg-primary h-full">
       <FlatList
-        //  data={[{ id: 1 }]}
+        data={posts}
         keyExtractor={(item) => item.$id}
-        ListHeaderComponent={() => (
+        ListHeaderComponent={(item) => (
           <View
             className="my-6 px-4 space-y-6">
             <View
@@ -58,7 +70,7 @@ const Home = () => {
         renderItem={({ item }) => (
           <Text
             className="text-3xl text-white">
-            {item.id}
+            {item.title}
           </Text>
         )}
         ListEmptyComponent={() => (
@@ -67,6 +79,12 @@ const Home = () => {
             subtitle="Be the first one to upload a video"
           />
         )}
+        refreshControl={
+          <RefreshControl
+            refreshing={refreshing}
+            onRefresh={onRefresh}
+          />
+        }
       />
     </SafeAreaView>
   )
