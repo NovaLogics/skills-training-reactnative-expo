@@ -3,15 +3,15 @@ import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 import { images } from '../../constants'
-import { SearchInput, Trending } from '../../components'
+import { EmptyState, SearchInput, Trending } from '../../components'
 
 
 const Home = () => {
   return (
     <SafeAreaView
-      className="bg-primary">
+      className="bg-primary h-full">
       <FlatList
-        data={[{ id: 1 }]}
+        //  data={[{ id: 1 }]}
         keyExtractor={(item) => item.$id}
         ListHeaderComponent={() => (
           <View
@@ -62,10 +62,10 @@ const Home = () => {
           </Text>
         )}
         ListEmptyComponent={() => (
-          <Text
-            className="text-2xl font-psemibold text-white">
-            Empty
-          </Text>
+          <EmptyState
+            title="No Videos Found"
+            subtitle="Be the first one to upload a video"
+          />
         )}
       />
     </SafeAreaView>
