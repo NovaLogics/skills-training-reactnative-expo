@@ -1,6 +1,7 @@
 import { SplashScreen, Stack } from 'expo-router';
 import { useFonts } from 'expo-font';
 import { useEffect } from 'react';
+import { GlobalProvider } from '../context/GlobalProvider';
 
 import "../global.css";
 import 'react-native-url-polyfill/auto'
@@ -35,6 +36,7 @@ const RootLayout = () => {
   }
 
   return (
+    <GlobalProvider>
     <Stack>
       <Stack.Screen
         name="index"
@@ -53,6 +55,7 @@ const RootLayout = () => {
         options={{ headerShown: false }}
       /> */}
     </Stack>
+    </GlobalProvider>
   )
 }
 
