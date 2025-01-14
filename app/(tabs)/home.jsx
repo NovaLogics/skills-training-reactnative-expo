@@ -3,7 +3,7 @@ import { React, useState, useEffect } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 import { images } from '../../constants'
-import { EmptyState, SearchInput, Trending } from '../../components'
+import { EmptyState, SearchInput, Trending, VideoCard } from '../../components'
 import { getAllPosts } from '../../lib/appwrite'
 import useAppWrite from '../../lib/useAppWrite'
 
@@ -25,7 +25,7 @@ const Home = () => {
       <FlatList
         data={posts}
         keyExtractor={(item) => item.$id}
-        ListHeaderComponent={(item) => (
+        ListHeaderComponent={() => (
           <View
             className="my-6 px-4 space-y-6">
             <View
@@ -68,10 +68,9 @@ const Home = () => {
           </View>
         )}
         renderItem={({ item }) => (
-          <Text
-            className="text-3xl text-white">
-            {item.title}
-          </Text>
+          <VideoCard
+            video={item}
+          />
         )}
         ListEmptyComponent={() => (
           <EmptyState
