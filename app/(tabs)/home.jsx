@@ -39,6 +39,8 @@ const Home = () => {
               </View>
             </View>
 
+            <SearchInput/>
+            
           </View>
         )}
         renderItem={({ item }) => (
