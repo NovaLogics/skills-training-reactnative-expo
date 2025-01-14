@@ -1,75 +1,67 @@
 <h1 align="center" >  VidBox App <br> ♨ [ ʀᴇᴀᴄᴛ ɴᴀᴛɪᴠᴇ ᴇxᴘᴏ ᴘʀᴏᴊᴇᴄᴛ ] ♨</h1>
 
 
-## Stage 07: Connect Backend and Login/Register | Appwrite.io  
-**Log:** January 13, 2025  
+## Stage 08: Feature Global State  
+**Log:** January 14, 2025  
 
-This stage focuses on integrating the backend using Appwrite.io for login and registration functionalities. It includes setting up Appwrite, creating necessary configurations, and implementing sign-in and sign-out functions in the app.  
+This stage involves implementing a global state management feature for handling the application's shared states like `isLoggedIn`, `loading`, and `user`. The global state is achieved using a `GlobalProvider` with React Context.  
 
 ---
 
 ## Step-by-Step Process  
 
-### 1. Use Appwrite.io for Backend Functions  
-- Visit `https://appwrite.io/`
-- Create an account and set up the necessary **databases** and **storages** for your app.  
+### 1. Create `context` Folder  
+- Add a new folder named `context` in the root directory.  
+- Inside the `context` folder, create a file named `GlobalProvider.js`.  
+
+**File Location**: `/context/GlobalProvider.js`  
+👉 [View the `GlobalProvider.js` code here](./context/GlobalProvider.js)  
 
 ---
 
-### 2. Install Appwrite.io SDK  
-To install the Appwrite SDK and required dependencies, run:  
-```base
-npx expo install react-native-appwrite react-native-url-polyfill
-```
+### 2. Implement GlobalProvider  
+- In `GlobalProvider.js`, implement logic to store and manage the global state for:  
+  - `isLoggedIn`: Boolean to track if a user is logged in.  
+  - `loading`: Boolean to track loading status.  
+  - `setUser`: Function to update user information.  
 
-Follow the instructions from the [Appwrite SDK for React Native GitHub page](https://github.com/appwrite/sdk-for-react-native)
-
----
-
-### 3. Configure Appwrite  
-- Log in to your Appwrite account and create the required **databases**, **collections**, and **storages**  
-- Create a new file named `appwrite-config.js` in the `/lib` folder. Replace `add-your-appwrite-config-file.js` with the following configuration:  
-
-**File Location**: `/lib/appwrite-config.js`  
-👉 [View the `add-your-appwrite-config-file.js` code here](./lib/add-your-appwrite-config-file.js)  
-
-```javascript
-export const appwriteConfig = {
-    endpoint: "https://cloud.appwrite.io/v1",
-    platform: "yourPlatform",
-    projectId: "yourId",
-    databaseId: "yourId",
-    userCollectionId: "yourId",
-    videoCollectionId: "yourId",
-    storageId: "yourId",
-}
-```
+**Updated Code**: `/context/GlobalProvider.js`  
+👉 [View the updated `GlobalProvider.js` code here](./context/GlobalProvider.js)  
 
 ---
 
-### 4. Write Config Functions  
-Write functions for login and logout in a file named `appwrite.js`  
+### 3. Apply GlobalProvider in Layouts  
+- Wrap the GlobalProvider around the app's `_layout.jsx` and `index.jsx` components.  
+
+**File Location**:  
+- `/app/_layout.jsx` 👉 [View `_layout.jsx` code here](./app/_layout.jsx)  
+- `/app/index.jsx` 👉 [View `index.jsx` code here](./app/index.jsx)  
+
+---
+
+### 4. Update `appwrite.js` Config Functions  
+- Write `getCurrentUser` function to integrate with the global state.  
 
 **File Location**: `/lib/appwrite.js`  
 👉 [View the `appwrite.js` code here](./lib/appwrite.js)  
 
 ---
 
-### 5. Apply Sign In Functions  
-Implement the sign-in functionality in the SignIn screen.  
+### 5. Apply GlobalProvider in SignIn  
+- Integrate the global state with the sign-in feature in `/app/(auth)/sign-in.jsx`.  
 
 **File Location**: `/app/(auth)/sign-in.jsx`  
 👉 [View the `sign-in.jsx` code here](./app/(auth)/sign-in.jsx)  
 
 ---
 
-### 6. Apply Sign Out Functions  
-Implement the sign-out functionality in the SignUp screen.  
+### 6. Apply GlobalProvider in SignUp  
+- Integrate the global state with the sign-out feature in `/app/(auth)/sign-up.jsx`.  
 
 **File Location**: `/app/(auth)/sign-up.jsx`  
 👉 [View the `sign-up.jsx` code here](./app/(auth)/sign-up.jsx)  
 
-<br/>
+
 
 ---
 
