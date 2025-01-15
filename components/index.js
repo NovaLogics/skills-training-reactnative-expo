@@ -5,5 +5,15 @@ import Trending from "./Trending";
 import EmptyState from "./EmptyState";
 import VideoCard from "./VideoCard";
 import FullScreenVideo from "./FullScreenVideo";
+import InfoBox from "./InfoBox";
 
-export { CustomButton, FormField, SearchInput, Trending, EmptyState, VideoCard, FullScreenVideo};
+export {
+    CustomButton,
+    FormField,
+    SearchInput,
+    Trending,
+    EmptyState,
+    VideoCard,
+    FullScreenVideo,
+    InfoBox,
+};
