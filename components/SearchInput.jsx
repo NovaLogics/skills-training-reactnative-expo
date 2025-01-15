@@ -5,17 +5,11 @@ import { icons } from '../constants'
 import { router, usePathname } from 'expo-router'
 
 const SearchInput = ({
-    title,
-    value,
-    placeholder,
-    handleChangeText,
-    otherStyles,
-    keyboardType,
-    ...props
+    initialQuery
 }) => {
 
     const pathName = usePathname();
-    const [query, setQuery] = useState("")
+    const [query, setQuery] = useState(initialQuery || "")
 
     return (
         <View
@@ -23,7 +17,7 @@ const SearchInput = ({
             rounded-3xl focus:border-secondary items-center flex-row space-x-4 pl-4 pr-4">
             <TextInput
                 className="flex-1 text-white font-pregular text-base mt-0.5"
-                value={value}
+                value={query}
                 placeholder="Search for a video topic"
                 placeholderTextColor="#CDCDE0"
                 onChangeText={(event) => setQuery(event)}
