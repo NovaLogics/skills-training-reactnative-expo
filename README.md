@@ -1,92 +1,62 @@
 <h1 align="center" >  VidBox App <br> ♨ [ ʀᴇᴀᴄᴛ ɴᴀᴛɪᴠᴇ ᴇxᴘᴏ ᴘʀᴏᴊᴇᴄᴛ ] ♨</h1>
 
 
-## Stage 09: Feature Home UI  
+## Stage 10: Feature Search Screen  
+
 **Log:** January 15, 2025  
-
-This stage focuses on implementing the Home UI with custom components like `Trending` and `VideoCard`. The logic to fetch and display the latest posts is integrated with Appwrite.
-
----
-
-## Step-by-Step Process  
-
-### 1. Implement Home UI  
-- Develop the Home UI for the app.
-
-**File Location**: `/app/(tabs)/home.jsx`  
-👉 [View the `home.jsx` code here](./app/(tabs)/home.jsx)  
-
-<br/>
+This stage focuses on implementing the search functionality, enabling users to search for videos dynamically. We'll create a search input, apply backend logic, and integrate it into the app seamlessly.  
 
 ---
 
-### - Install 'react-native-animatable'  
-**Source:** [React Native Animatable GitHub Repository](https://github.com/oblador/react-native-animatable)  
+### Step-by-Step Process  
 
-### Installation Command:  
-```
-npm install react-native-animatable --save
-```
-<br/>
+1. **Create the SearchInput Component**  
+Build a reusable component to handle user input for searches.  
+   **File:** `/components/SearchInput.jsx`  
+   **Link:** [SearchInput.jsx ->](./components/SearchInput.jsx)  
+   
+   <br/>
+   
+   ---  
 
----
+1. **Design and Implement the Search Screen**  
+   Create a visually appealing and functional search screen that displays results based on user queries.  
+   **File:** `/app/search/[query].jsx`  
+   **Link:** [[query].jsx ->](./app/search/[query].jsx)  
+   
+   <br/>
+   
+   ---  
 
-### - Install 'Expo Video'  
-Expo provides two video packages:  
-1. **Expo Video (`expo-av`)** (Deprecated)  
-2. **Expo Video (`expo-video`)**  
+2. **Add Search Logic to Appwrite**  
+   Implement the backend functionality to fetch search results dynamically. This will allow the app to communicate with the server for relevant data.  
+   **File:** `/app/appwrite.jsx`  
+   **Link:** [appwrite.jsx ->](./app/appwrite.jsx) 
 
-### Option 1: Install Expo Video (`expo-av`) (Deprecated)  
-**Command:**  
-```
-npx expo install expo-av
-```
-**Guide:** [Expo AV Video Documentation](https://docs.expo.dev/versions/latest/sdk/video-av/)  
+   <br/>
+   
+   ---  
 
-<br/>
+3. **Update Index Settings on Appwrite**  
+   Go to [Appwrite Cloud](https://cloud.appwrite.io/) and configure your video collection's index settings for efficient searching. Use the settings shown below:  
+   <p align="center">  
+      <img src="./_archive/video_search_settings.png" alt="Video Collection Index Settings">  
+   </p>  
 
+   <br/>
 
-### Option 2: Install Expo Video (`expo-video`)  
-**Command:**  
-```
-npx expo install expo-video
-```
-
-**Guide:** [Expo Video Documentation](https://docs.expo.dev/versions/latest/sdk/video/)  
+   ---  
 
 
----
----
+4. **Connect Search Logic to the Search Screen**  
+   Integrate the search functionality into the search screen so users can see live results based on their input.  
+   **File:** `/app/search/[query].jsx`  
+   **Link:** [[query].jsx ->](./app/search/[query].jsx)  
 
-### 2. Add & Implement Custom Component: `Trending`  
-- Create a `Trending` component to display trending posts or videos.  
-
-**File Location**: `/components/Trending.jsx`  
-👉 [View the `Trending.jsx` code here](./components/Trending.jsx)  
-
----
-
-### 3. Add & Implement Custom Component: `VideoCard`  
-- Create a `VideoCard` component to represent individual videos in a card format.  
-
-**File Location**: `/components/VideoCard.jsx`  
-👉 [View the `VideoCard.jsx` code here](./components/VideoCard.jsx)  
-
----
-
-### 4. Add `getLatestPosts` Logic in `Appwrite` File  
-- Add logic in the `appwrite` configuration file to fetch the latest posts.  
-
-**File Location**: `/lib/appwrite.js`  
-👉 [View the `appwrite.js` code here](./lib/appwrite.js)  
-
----
-
-### 5. Apply `VideoCard` and `Trending` in Home UI  
-- Use the `VideoCard` and `Trending` components to populate the Home UI.  
-
-**File Location**: `/app/(tabs)/home.jsx`  
-👉 [View the updated `home.jsx` code here](./app/(tabs)/home.jsx)  
+   <br/>
+   
+   ---  
+ 
 
 <br/>
 
