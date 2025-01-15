@@ -10,7 +10,7 @@ import { router } from 'expo-router';
 import { createVideo } from '../../lib/appwrite';
 import { useGlobalContext } from "../../context/GlobalProvider";
 
-const { width, height } = Dimensions.get("window");
+const { width } = Dimensions.get("window");
 
 const Create = () => {
 
