@@ -1,11 +1,13 @@
 import { View, Text, FlatList, Image, RefreshControl, Alert } from 'react-native'
 import { React, useState, useEffect } from 'react'
+import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 import { images } from '../../constants'
 import { EmptyState, SearchInput, Trending, VideoCard } from '../../components'
 import { getAllPosts, getLatestPosts } from '../../lib/appwrite'
 import useAppWrite from '../../lib/useAppWrite'
+import { useGlobalContext } from "../../context/GlobalProvider";
 
 
 const Home = () => {
@@ -14,6 +16,8 @@ const Home = () => {
   const { data: posts, refetch } = useAppWrite(getAllPosts)
 
   const { data: latestPosts } = useAppWrite(getLatestPosts)
+
+    const { user } = useGlobalContext();
 
   const onRefresh = async () => {
     setRefreshing(true)
@@ -39,7 +43,7 @@ const Home = () => {
                 </Text>
                 <Text
                   className="text-2xl font-psemibold text-white">
-                  User
+                  {user.username ?? "User"}
                 </Text>
               </View>
 
@@ -87,6 +91,10 @@ const Home = () => {
             onRefresh={onRefresh}
           />
         }
+      />
+      <StatusBar
+        backgroundColor="#161622"
+        style="light"
       />
     </SafeAreaView>
   )

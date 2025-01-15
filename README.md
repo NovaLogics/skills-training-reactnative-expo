@@ -1,10 +1,10 @@
 <h1 align="center" >  VidBox App <br> ♨ [ ʀᴇᴀᴄᴛ ɴᴀᴛɪᴠᴇ ᴇxᴘᴏ ᴘʀᴏᴊᴇᴄᴛ ] ♨</h1>
 
 
-## Stage 08: Feature Global State  
-**Log:** January 14, 2025  
+## Stage 09: Feature Home UI 
+**Log:** January 15, 2025  
 
-This stage involves implementing a global state management feature for handling the application's shared states like `isLoggedIn`, `loading`, and `user`. The global state is achieved using a `GlobalProvider` with React Context.  
+[ Trending.jsx -> ](./components/Trending.jsx)
 
 ---
 
