@@ -1,13 +1,14 @@
-import { View, Text, FlatList, Image, RefreshControl, Alert } from 'react-native'
+import { View, Text, FlatList, Image, RefreshControl, Alert, TouchableOpacity } from 'react-native'
 import { React, useState, useEffect } from 'react'
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context'
 
-import { EmptyState, SearchInput, Trending, VideoCard } from '../../components'
+import { EmptyState, InfoBox, SearchInput, Trending, VideoCard } from '../../components'
 import { getUserPosts } from '../../lib/appwrite'
 import useAppWrite from '../../lib/useAppWrite'
 import { useLocalSearchParams } from 'expo-router'
 import { useGlobalContext } from "../../context/GlobalProvider";
+import { icons } from '../../constants';
 
 const Profile = () => {
   const { user, setUser, setIsLogged } = useGlobalContext();
@@ -18,6 +19,10 @@ const Profile = () => {
     () => getUserPosts(user.$id)
   );
 
+  const logout = () => {
+
+  }
+
   return (
     <SafeAreaView
       className="bg-primary h-full">
@@ -26,20 +31,44 @@ const Profile = () => {
         keyExtractor={(item) => item.$id}
         ListHeaderComponent={() => (
           <View
-            className="my-6 px-4">
-            <Text
-              className="font-pmedium text-sm text-gray-100">
-              User Profile
-            </Text>
-            <Text
-              className="text-2xl font-psemibold text-white">
-              {/* {query} */}
-            </Text>
+            className="w-full justify-center items-center mt-6 mb-12 px-4">
+            <TouchableOpacity
+              className="w-full items-end mb-10"
+              onPress={logout}>
+              <Image
+                source={icons.logout}
+                className="w-6 h-6"
+                resizeMode="contain"
+              />
+            </TouchableOpacity>
             <View
-              className="mt-6 mb-8">
-              {/* <SearchInput
-                initialQuery={query}
-              /> */}
+              className="w-16 h-16 border border-secondary rounded-lg justify-center items-center">
+              <Image
+                source={{ uri: user?.avatar }}
+                className="w-[90%] h-[90%] rounded-lg"
+                resizeMode="cover"
+              />
+            </View>
+
+            <InfoBox
+              title={user?.username}
+              containerStyles="mt-5"
+              titleStyles="text-lg"
+            />
+
+            <View
+              className="mt-5 flex-row">
+              <InfoBox
+                title={posts.length || 0}
+                subtitle="Posts"
+                containerStyles="mr-10"
+                titleStyles="text-lg"
+              />
+              <InfoBox
+                title="500+"
+                subtitle="Followers"
+                titleStyles="text-lg"
+              />
             </View>
           </View>
         )}
