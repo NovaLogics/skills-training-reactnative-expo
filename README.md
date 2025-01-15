@@ -1,57 +1,64 @@
 <h1 align="center" >  VidBox App <br> ♨ [ ʀᴇᴀᴄᴛ ɴᴀᴛɪᴠᴇ ᴇxᴘᴏ ᴘʀᴏᴊᴇᴄᴛ ] ♨</h1>
 
 
-## Stage 11: Feature Profile Screen  
-**Log:** January 15, 2025  
-This stage is about creating a personalized Profile Screen for the app. Users will be able to view their details and log out of the app seamlessly.  
+## Stage 12: Feature Create/Upload Video Screen  
+**Log:** January 16, 2025  
+This stage focuses on enabling users to create and upload videos to the platform. The screen will include functionalities for file selection and uploading to the backend.  
 
 ### Step-by-Step Process  
 
-1. **Implement the Basic UI for the Profile Screen**  
-   Design the layout of the Profile Screen, ensuring it is clean and user-friendly.  
-   **File:** `/app/(tabs)/profile.jsx`  
-   **Link:** [profile.jsx ->](./app/(tabs)/profile.jsx)  
-      
+1. **Implement the Basic UI for the Create Video Screen**  
+   Design a simple and intuitive UI for the video creation and upload process.  
+   **File:** `/app/(tabs)/create.jsx`  
+   **Link:** [create.jsx ->](./app/(tabs)/create.jsx)  
+
    <br/>
-   
+
    ---  
 
-2. **Add a Custom Component 'InfoBox'**  
-   Create a reusable `InfoBox` component to display user details like name, email, etc., in an organized manner.  
-   **File:** `/components/InfoBox.jsx`  
-   **Link:** [InfoBox.jsx ->](./components/InfoBox.jsx)  
-      
+2. **Install File Picker Libraries**  
+   Choose and install one of the following libraries to allow users to pick files:  
+   - **Expo DocumentPicker:** [Guide ->](https://docs.expo.dev/versions/latest/sdk/document-picker/)  
+   - **Expo ImagePicker:** [Guide ->](https://docs.expo.dev/versions/latest/sdk/imagepicker/)  
+   
    <br/>
    
-   ---  
+   ---
 
-3. **Add SignOut Logic to Appwrite**  
-   Implement the backend functionality for user sign-out. This logic will allow users to securely log out from their accounts.  
+3. **Add Create and Upload Logic**  
+   Implement `createVideo` and `uploadFile` functions in the Appwrite configuration file for managing video uploads.  
    **File:** `/app/appwrite.jsx`  
    **Link:** [appwrite.jsx ->](./app/appwrite.jsx)  
-      
+   
    <br/>
    
    ---  
 
-4. **Apply SignOut Logic to the Profile Screen**  
-   Integrate the `signOut` functionality into the Profile Screen, providing users with an easy way to log out.  
-   **File:** `/app/(tabs)/profile.jsx`  
-   **Link:** [profile.jsx ->](./app/(tabs)/profile.jsx)  
-      
+4. **Update Appwrite Storage Settings**  
+   Navigate to the Appwrite dashboard and configure storage to allow specific file extensions.  
+   <p align="center">  
+   <img src="./_archive/storage_extension_settings.png"/>  
+   </p>  
+
+   
    <br/>
+   
+   ---
 
-   --- 
-
-<br/>
+5. **Integrate Create and Upload Logic into the Screen**  
+   Apply the `createVideo` and `uploadFile` functions to the Create Video Screen, enabling the upload process.  
+   **File:** `/app/(tabs)/create.jsx`  
+   **Link:** [create.jsx ->](./app/(tabs)/create.jsx)  
+   
+   <br/>
 
 ---
 
 <br/>
 
-### PROFILE SCREEN
+### CREATE SCREEN
 <p align="center">
-<img src="./_archive/screenshot_04.png" width=180>
+<img src="./_archive/screenshot_05.png" width=180>
 <br/>
 
 ### OTHER SCREENS
@@ -60,12 +67,13 @@ This stage is about creating a personalized Profile Screen for the app. Users wi
 <img src="./_archive/screenshot_01.png" width=180>
 <img src="./_archive/screenshot_02.png" width=180>
 <img src="./_archive/screenshot_03.png" width=180>
+<img src="./_archive/screenshot_04.png" width=180>
 </p>
 
 <br/>
 
 ---
 
-See you in the next step for the development process! 🚀  
+Now users can easily upload videos to the app! 🎥 See you in the next stage! 🚀  
 
 ---
