@@ -4,9 +4,9 @@ import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 import { EmptyState, InfoBox, SearchInput, Trending, VideoCard } from '../../components'
-import { getUserPosts } from '../../lib/appwrite'
+import { getUserPosts, signOut } from '../../lib/appwrite'
 import useAppWrite from '../../lib/useAppWrite'
-import { useLocalSearchParams } from 'expo-router'
+import { router, useLocalSearchParams } from 'expo-router'
 import { useGlobalContext } from "../../context/GlobalProvider";
 import { icons } from '../../constants';
 
@@ -19,8 +19,12 @@ const Profile = () => {
     () => getUserPosts(user.$id)
   );
 
-  const logout = () => {
+  const logout = async () => {
+    await signOut();
+    setUser(null);
+    setIsLogged(false);
 
+    router.replace("/sign-in");
   }
 
   return (
