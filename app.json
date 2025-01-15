@@ -35,8 +35,18 @@
           "supportsBackgroundPlayback": true,
           "supportsPictureInPicture": true
         }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you share them with your friends."
+        }
       ]
     ],
-    "permissions": ["CAMERA", "AUDIO_RECORDING", "MEDIA_LIBRARY_WRITE_ONLY"]
+    "permissions": [
+      "CAMERA",
+      "AUDIO_RECORDING",
+      "MEDIA_LIBRARY_WRITE_ONLY"
+    ]
   }
 }
