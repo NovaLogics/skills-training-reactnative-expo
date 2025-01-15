@@ -4,5 +4,6 @@ import SearchInput from "./SearchInput";
 import Trending from "./Trending";
 import EmptyState from "./EmptyState";
 import VideoCard from "./VideoCard";
+import FullScreenVideo from "./FullScreenVideo";
 
-export { CustomButton, FormField, SearchInput, Trending, EmptyState, VideoCard};
+export { CustomButton, FormField, SearchInput, Trending, EmptyState, VideoCard, FullScreenVideo};
