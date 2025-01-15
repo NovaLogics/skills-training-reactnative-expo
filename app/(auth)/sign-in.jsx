@@ -5,39 +5,45 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { images } from '../../constants'
 import { CustomButton, FormField } from '../../components'
 import { Link, router } from 'expo-router'
-import { signIn } from '../../lib/appwrite'
+import { getCurrentUser, signIn } from '../../lib/appwrite'
+import { useGlobalContext } from "../../context/GlobalProvider";
 
 const SignIn = () => {
 
+  const { setUser, setIsLogged } = useGlobalContext();
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const [form, setForm] = useState({
     email: "",
     password: ""
   })
 
-  const [isSubmitting, setIsSubmitting] = useState(false)
-
   const submit = async () => {
-      if (!form.email | !form.password) {
-        Alert.alert("Error", "Please fill in the fields")
-      }
-  
-      setIsSubmitting(true);
-  
-      try {
-         await signIn(
-          form.email,
-          form.password,
-        );
-  
-        //set it to global state
-  
-        router.replace("/home");
-  
-      } catch (error) {
-        Alert.alert("Error", error.message)
-      } finally {
-        setIsSubmitting(false);
-      }
+    if (!form.email === "" | !form.password === "") {
+      Alert.alert("Error", "Please fill in the fields")
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      await signIn(
+        form.email,
+        form.password,
+      );
+
+      const result = await getCurrentUser();
+
+      setUser(result);
+      setIsLogged(true)
+
+      Alert.alert("Success", "User signed in successfully")
+
+      router.replace("/home");
+
+    } catch (error) {
+      Alert.alert("Error", error.message)
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (

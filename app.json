@@ -28,7 +28,15 @@
     },
     "plugins": [
       "expo-router",
-      "expo-font"
-    ]
+      "expo-font",
+      [
+        "expo-video",
+        {
+          "supportsBackgroundPlayback": true,
+          "supportsPictureInPicture": true
+        }
+      ]
+    ],
+    "permissions": ["CAMERA", "AUDIO_RECORDING", "MEDIA_LIBRARY_WRITE_ONLY"]
   }
 }
