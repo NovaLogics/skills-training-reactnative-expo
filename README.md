@@ -16,6 +16,46 @@ This stage focuses on implementing the Home UI with custom components like `Tren
 **File Location**: `/app/(tabs)/home.jsx`  
 👉 [View the `home.jsx` code here](./app/(tabs)/home.jsx)  
 
+<br/>
+
+---
+
+### - Install 'react-native-animatable'  
+**Source:** [React Native Animatable GitHub Repository](https://github.com/oblador/react-native-animatable)  
+
+### Installation Command:  
+```
+npm install react-native-animatable --save
+```
+<br/>
+
+---
+
+### - Install 'Expo Video'  
+Expo provides two video packages:  
+1. **Expo Video (`expo-av`)** (Deprecated)  
+2. **Expo Video (`expo-video`)**  
+
+### Option 1: Install Expo Video (`expo-av`) (Deprecated)  
+**Command:**  
+```
+npx expo install expo-av
+```
+**Guide:** [Expo AV Video Documentation](https://docs.expo.dev/versions/latest/sdk/video-av/)  
+
+<br/>
+
+
+### Option 2: Install Expo Video (`expo-video`)  
+**Command:**  
+```
+npx expo install expo-video
+```
+
+**Guide:** [Expo Video Documentation](https://docs.expo.dev/versions/latest/sdk/video/)  
+
+
+---
 ---
 
 ### 2. Add & Implement Custom Component: `Trending`  
