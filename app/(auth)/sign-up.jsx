@@ -44,13 +44,11 @@ const SignUp = () => {
 
   return (
     <SafeAreaView
-      className="bg-primary h-full"
-    >
+      className="bg-primary h-full">
       {/* Main container */}
       <ScrollView>
         <View
-          className="w-full min-h-[83vh] justify-center px-4 my-6"
-        >
+          className="w-full min-h-[83vh] justify-center px-4 my-6">
           {/* Logo */}
           <Image
             source={images.logo}
@@ -59,8 +57,7 @@ const SignUp = () => {
           />
           {/* Title text */}
           <Text
-            className="text-2xl text-white text-semibold mt-10 font-psemibold"
-          >
+            className="text-2xl text-white text-semibold mt-10 font-psemibold">
             Sign up to VidBox
           </Text>
           {/* Username field */}
@@ -95,16 +92,13 @@ const SignUp = () => {
           />
           {/* Redirect to Sign In */}
           <View
-            className="justify-center pt-5 flex-row gap-2"
-          >
+            className="justify-center pt-5 flex-row gap-2">
             <Text
-              className="text-lg text-gray-100 font-pregular"
-            >
+              className="text-lg text-gray-100 font-pregular">
               Have an account already?
             </Text>
             <Link href={routes.SIGN_IN}
-              className="text-lg font-psemibold text-secondary"
-            >
+              className="text-lg font-psemibold text-secondary">
               Sign In
             </Link>
           </View>
