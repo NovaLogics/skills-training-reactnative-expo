@@ -16,10 +16,16 @@ export default function App() {
     }
 
     return (
-        <SafeAreaView className="bg-primary h-full">
-            <ScrollView contentContainerStyle={{ height: "100%" }}>
+        <SafeAreaView
+            className="bg-primary h-full"
+        >
+            <ScrollView
+                contentContainerStyle={{ height: "100%" }}
+            >
                 {/* Main content container */}
-                <View className="w-full justify-center items-center min-h-[85vh] px-4">
+                <View
+                    className="w-full justify-center items-center min-h-[85vh] px-4"
+                >
                     {/* Logo image */}
                     <Image
                         source={images.logo}
@@ -33,7 +39,9 @@ export default function App() {
                         resizeMode="contain"
                     />
                     {/* Section : Main heading */}
-                    <View className="relative mt-5">
+                    <View
+                        className="relative mt-5"
+                    >
                         {/* Title text */}
                         <Text className="text-3xl text-white font-bold text-center">
                             Explore Infinite Horizons,
@@ -52,8 +60,10 @@ export default function App() {
                         />
                     </View>
                     {/* Subheading text */}
-                    <Text className="text-sm font-pregular text-gray-100 mt-7 text-center">
-                    Where Creativity and Innovation Lead the Way: Begin Your Journey with VidBox.
+                    <Text
+                        className="text-sm font-pregular text-gray-100 mt-7 text-center"
+                    >
+                        Where Creativity and Innovation Lead the Way: Begin Your Journey with VidBox.
                     </Text>
                     {/* Custom sign-in button */}
                     <CustomButton

@@ -4,7 +4,7 @@ import { React, useState } from 'react'
 import { View, Text, ScrollView, Image, Alert } from 'react-native'
 
 import { images } from '../../shared/constants'
-import { useGlobalContext } from "../../shared/context/GlobalProvider";
+import { useGlobalContext } from '../../shared/context/GlobalProvider';
 import { messages, routes } from '../../shared/constants/strings';
 import { getCurrentUser, signIn } from '../../shared/api/appwrite'
 import { CustomButton, FormField } from "../../shared/components";
@@ -15,7 +15,7 @@ const SignIn = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [form, setForm] = useState({
     email: "",
-    password: ""
+    password: "",
   })
 
   const submit = async () => {
@@ -45,9 +45,13 @@ const SignIn = () => {
   }
 
   return (
-    <SafeAreaView className="bg-primary h-full">
+    <SafeAreaView
+      className="bg-primary h-full"
+    >
       <ScrollView>
-        <View className="w-full min-h-[60vh] justify-center px-4 my-24">
+        <View
+          className="w-full min-h-[60vh] justify-center px-4 my-24"
+        >
           {/* Logo image */}
           <Image
             source={images.logo}
@@ -82,8 +86,12 @@ const SignIn = () => {
             isLoading={isSubmitting}
           />
           {/* Sign Up link */}
-          <View className="justify-center pt-5 flex-row gap-2">
-            <Text className="text-lg text-gray-100 font-pregular">
+          <View
+            className="justify-center pt-5 flex-row gap-2"
+          >
+            <Text
+              className="text-lg text-gray-100 font-pregular"
+            >
               Don't have account?
             </Text>
             <Link
