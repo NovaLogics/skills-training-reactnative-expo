@@ -10,30 +10,17 @@ const CustomButton = ({
 }) => {
     return (
         <TouchableOpacity
-            className={`
-                bg-secondary 
-                rounded-3xl
-                min-h-[62px] 
-                justify-center 
-                items-center
-                 ${containerStyles}
-                 ${isLoading ? "opacity-50" : ""}
-                 `}
+            className={`bg-secondary-200 rounded-full min-h-[54px] justify-center items-center ${containerStyles} ${isLoading ? "opacity-50" : ""}`}
             onPress={handlePress}
             activeOpacity={0.7}
             disabled={isLoading}
         >
-
+            {/* Title text */}
             <Text
-                className={`
-                    text-primary 
-                    font-psemibold 
-                    text-lg
-                    ${textStyles}
-                `}>
+                className={`text-primary font-psemibold text-xl ${textStyles}`}
+            >
                 {title}
             </Text>
-
         </TouchableOpacity>
     );
 };
