@@ -71,12 +71,12 @@ const VideoCard = ({
                 // Video player when play is true
                 <Video
                     source={{ uri: video }}
-                    className="w-full h-60 rounded-xl mt-3 bg-white/10"
+                    className="w-full h-60 rounded-xl mt-4 bg-white/10"
                     style={{
                         width: width,
                         height: 280,
-                        marginTop: 3,
-                        backgroundColor: "rgba(255, 255, 255, 0.1)",
+                        marginTop: 8,
+                        backgroundColor: "#161622",
                     }}
                     resizeMode={ResizeMode.CONTAIN}
                     useNativeControls

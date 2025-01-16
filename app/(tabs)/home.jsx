@@ -10,13 +10,14 @@ import { EmptyState, SearchInput, Trending, VideoCard } from "../../shared/compo
 
 const Home = () => {
   const { user } = useGlobalContext();
-  const { data: latestPosts } = useAppwrite(getLatestPosts);
-  const { data: posts, refetch } = useAppwrite(getAllPosts);
+  const { data: latestPosts, refetch: refetchLatest } = useAppwrite(getLatestPosts);
+  const { data: posts, refetch: refetchAll } = useAppwrite(getAllPosts);
   const [refreshing, setRefreshing] = useState(false);
 
   const onRefresh = async () => {
     setRefreshing(true);
-    await refetch();
+    await refetchAll();
+    await refetchLatest();
     setRefreshing(false);
   };
 
@@ -28,7 +29,7 @@ const Home = () => {
         keyExtractor={(item) => item.$id}
         // Header component
         ListHeaderComponent={() => (
-          <View className="my-6 px-4 space-y-6">
+          <View className="my-6 px-4 space-y-6 min-h-[460px]">
             {/* Welcome message */}
             <View
               className="justify-between items-start flex-row mb-6">
@@ -56,7 +57,7 @@ const Home = () => {
             <SearchInput />
             {/* Latest videos */}
             <View
-              className="w-full flex-1 pt-5 pb-8">
+              className="w-full flex-1 pt-5 pb-4">
               <Text
                 className="text-gray-100 text-lg font-pregular mb-3">
                 Latest Videos
