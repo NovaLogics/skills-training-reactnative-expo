@@ -36,7 +36,7 @@ export default function App() {
                     <View className="relative mt-5">
                         {/* Title text */}
                         <Text className="text-3xl text-white font-bold text-center">
-                            Discover Endless
+                            Explore Infinite Horizons,
                             {"\n"}
                             Possibilities with
                             {" "}
@@ -53,8 +53,7 @@ export default function App() {
                     </View>
                     {/* Subheading text */}
                     <Text className="text-sm font-pregular text-gray-100 mt-7 text-center">
-                        Where Creativity Meets Innovation: Embark on a Journey of Limitless
-                        Exploration with Aora
+                    Where Creativity and Innovation Lead the Way: Begin Your Journey with VidBox.
                     </Text>
                     {/* Custom sign-in button */}
                     <CustomButton
@@ -62,7 +61,7 @@ export default function App() {
                         handlePress={() => {
                             router.push("/sign-in");
                         }}
-                        containerStyles="w-full mt-7"
+                        containerStyles="w-[85%] mt-12"
                     />
                 </View>
             </ScrollView>
