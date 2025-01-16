@@ -2,7 +2,7 @@ import React from 'react'
 import { StatusBar } from 'expo-status-bar';
 import { Stack } from 'expo-router'
 import { useGlobalContext } from "../../context/GlobalProvider";
-import { Loader } from "../../components";
+import { Loader } from "../../shared/components";
 
 const AuthLayout = () => {
   const { loading, isLogged } = useGlobalContext();

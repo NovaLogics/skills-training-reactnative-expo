@@ -2,8 +2,8 @@ import { View, Text, Image } from 'react-native'
 import { Tabs, Redirect } from 'expo-router'
 import React from 'react'
 import { StatusBar } from 'expo-status-bar';
-import { Loader } from "../../components";
-import { icons } from '../../constants'
+import { Loader } from "../../shared/components";
+import { icons } from '../../shared/constants'
 import { useGlobalContext } from "../../context/GlobalProvider";
 
 const TabIcon = ({ icon, color, name, focused }) => {

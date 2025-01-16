@@ -2,8 +2,8 @@ import { StatusBar } from 'expo-status-bar';
 import { Text, View, ScrollView, Image } from 'react-native';
 import { Redirect, router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { images } from "../constants";
-import { CustomButton } from '../components';
+import { images } from "../shared/constants";
+import { CustomButton } from '../shared/components';
 
 import  { useGlobalContext } from '../context/GlobalProvider';
 

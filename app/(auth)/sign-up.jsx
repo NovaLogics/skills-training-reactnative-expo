@@ -2,10 +2,10 @@ import { View, Text, ScrollView, Image, Alert } from 'react-native'
 import { React, useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
-import { images } from '../../constants'
-import { CustomButton, FormField } from '../../components'
+import { images } from '../../shared/constants'
+import { CustomButton, FormField } from "../../shared/components";
 import { Link, router } from 'expo-router'
-import { createUser } from '../../lib/appwrite'
+import { createUser } from '../../shared/api/appwrite'
 import { useGlobalContext } from "../../context/GlobalProvider";
 
 const SignUp = () => {
