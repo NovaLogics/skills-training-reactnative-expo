@@ -1,5 +1,6 @@
 import { Client, Account, ID, Avatars, Databases, Query, Storage } from 'react-native-appwrite';
 import { config } from './appwrite-config';
+// import { config } from './add-your-appwrite-config-file';
 
 // Init your React Native SDK
 const client = new Client();
@@ -15,6 +16,8 @@ const avatars = new Avatars(client);
 const database = new Databases(client);
 const storage = new Storage(client);
 
+// Create New User : Sign-up
+//->
 export const createUser = async (email, password, username) => {
     try {
         const newAccount = await account.create(
@@ -49,6 +52,8 @@ export const createUser = async (email, password, username) => {
     }
 }
 
+// Login with email & password : Sign-in
+//->
 export const signIn = async (email, password) => {
     try {
         const session = await account.createEmailPasswordSession(email, password)
@@ -58,6 +63,8 @@ export const signIn = async (email, password) => {
     }
 }
 
+// Get Current User Deatils
+//->
 export const getCurrentUser = async () => {
     try {
         const currentAccount = await account.get();
@@ -78,6 +85,8 @@ export const getCurrentUser = async () => {
     }
 }
 
+// Get All Posts : Descending order (Latest post first)
+//->
 export const getAllPosts = async () => {
     try {
         const posts = await database.listDocuments(
@@ -91,7 +100,8 @@ export const getAllPosts = async () => {
     }
 }
 
-
+// Get Latest Posts : Descending order (Latest post first) , Limit to 7
+//->
 export const getLatestPosts = async () => {
     try {
         const posts = await database.listDocuments(
@@ -105,7 +115,8 @@ export const getLatestPosts = async () => {
     }
 }
 
-
+// Search Posts by query
+//->
 export const searchPosts = async (query) => {
     try {
         const posts = await database.listDocuments(
@@ -119,6 +130,8 @@ export const searchPosts = async (query) => {
     }
 }
 
+// Get Current User's Posts
+//->
 export const getUserPosts = async (userId) => {
     try {
         const posts = await database.listDocuments(
@@ -132,6 +145,8 @@ export const getUserPosts = async (userId) => {
     }
 }
 
+// Sign Out from app
+//->
 export const signOut = async () => {
     try {
         const session = await account.deleteSession("current")
@@ -141,6 +156,8 @@ export const signOut = async () => {
     }
 }
 
+// Fetches a file preview URL based on the file type (video or image)
+//->
 export const getFilePreview = async (fileId, type) => {
     let fileUrl;
 
@@ -173,18 +190,17 @@ export const getFilePreview = async (fileId, type) => {
     }
 }
 
+// Uploads a file and returns its preview URL after successful upload
+//->
 export const uploadFile = async (file, type) => {
-
     if (!file) return;
 
-    const asset = { 
+    const asset = {
         name: file.fileName,
-        type: file.mimeType, 
+        type: file.mimeType,
         size: file.fileSize,
         uri: file.uri,
     };
-
-    console.log(file)
 
     try {
         const uploadFile = await storage.createFile(
@@ -193,17 +209,16 @@ export const uploadFile = async (file, type) => {
             asset
         );
 
-        console.log(asset)
-
         const fileUrl = await getFilePreview(uploadFile.$id, type);
 
         return fileUrl;
-
     } catch (error) {
         throw new Error(error);
     }
 }
 
+// Creates a new video post with a thumbnail and video URL after upload to storage
+//->
 export const createVideo = async (form) => {
     try {
         const [thumbnailUrl, videoUrl] = await Promise.all([
@@ -212,13 +227,17 @@ export const createVideo = async (form) => {
         ])
 
         const newPost = await database.createDocument(
-            config.databaseId, config.videoCollectionId, ID.unique(), {
-            title: form.title,
-            thumbnail: thumbnailUrl,
-            video: videoUrl,
-            prompt: form.prompt,
-            creator: form.userId
-        })
+            config.databaseId,
+            config.videoCollectionId,
+            ID.unique(),
+            {
+                title: form.title,
+                thumbnail: thumbnailUrl,
+                video: videoUrl,
+                prompt: form.prompt,
+                creator: form.userId
+            }
+        )
 
         return newPost;
     } catch (error) {
