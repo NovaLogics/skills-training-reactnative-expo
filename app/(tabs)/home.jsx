@@ -7,7 +7,7 @@ import { images } from '../../shared/constants'
 import { EmptyState, SearchInput, Trending, VideoCard } from "../../shared/components";
 import { getAllPosts, getLatestPosts } from '../../shared/api/appwrite'
 import useAppWrite from '../../shared/api/useAppWrite'
-import { useGlobalContext } from "../../context/GlobalProvider";
+import { useGlobalContext } from "../../shared/context/GlobalProvider";
 
 
 const Home = () => {

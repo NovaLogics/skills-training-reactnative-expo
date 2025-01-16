@@ -4,7 +4,7 @@ import React from 'react'
 import { StatusBar } from 'expo-status-bar';
 import { Loader } from "../../shared/components";
 import { icons } from '../../shared/constants'
-import { useGlobalContext } from "../../context/GlobalProvider";
+import { useGlobalContext } from "../../shared/context/GlobalProvider";
 
 const TabIcon = ({ icon, color, name, focused }) => {
     return (

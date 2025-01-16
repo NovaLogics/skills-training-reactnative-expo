@@ -8,7 +8,7 @@ import { Dimensions } from "react-native";
 import * as ImagePicker from 'expo-image-picker';
 import { router } from 'expo-router';
 import { createVideo } from '../../shared/api/appwrite';
-import { useGlobalContext } from "../../context/GlobalProvider";
+import { useGlobalContext } from "../../shared/context/GlobalProvider";
 
 const { width } = Dimensions.get("window");
 

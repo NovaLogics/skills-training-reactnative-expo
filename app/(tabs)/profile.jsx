@@ -7,7 +7,7 @@ import { EmptyState, InfoBox, SearchInput, Trending, VideoCard } from "../../sha
 import { getUserPosts, signOut } from '../../shared/api/appwrite'
 import useAppWrite from '../../shared/api/useAppWrite'
 import { router, useLocalSearchParams } from 'expo-router'
-import { useGlobalContext } from "../../context/GlobalProvider";
+import { useGlobalContext } from "../../shared/context/GlobalProvider";
 import { icons } from '../../shared/constants';
 
 const Profile = () => {

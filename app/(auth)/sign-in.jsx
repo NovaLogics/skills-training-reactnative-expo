@@ -6,7 +6,7 @@ import { images } from '../../shared/constants'
 import { CustomButton, FormField } from "../../shared/components";
 import { Link, router } from 'expo-router'
 import { getCurrentUser, signIn } from '../../shared/api/appwrite'
-import { useGlobalContext } from "../../context/GlobalProvider";
+import { useGlobalContext } from "../../shared/context/GlobalProvider";
 
 const SignIn = () => {
 
