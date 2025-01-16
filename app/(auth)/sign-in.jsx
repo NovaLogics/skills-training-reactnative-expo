@@ -57,7 +57,8 @@ const SignIn = () => {
             className="w-[115px] h-[35px]"
           />
           {/* Title text */}
-          <Text className="text-2xl text-white text-semibold mt-10 font-psemibold">
+          <Text
+            className="text-2xl text-white text-semibold mt-10 font-psemibold">
             Login to VidBox
           </Text>
           {/* Email field */}
