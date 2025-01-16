@@ -3,9 +3,9 @@ import { React, useState, useEffect } from 'react'
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context'
 
-import { EmptyState, SearchInput, Trending, VideoCard } from '../../components'
-import { searchPosts } from '../../lib/appwrite'
-import useAppWrite from '../../lib/useAppWrite'
+import { EmptyState, SearchInput, Trending, VideoCard } from "../../shared/components";
+import { searchPosts } from '../../shared/api/appwrite'
+import useAppWrite from '../../shared/api/useAppWrite'
 import { useLocalSearchParams } from 'expo-router'
 
 

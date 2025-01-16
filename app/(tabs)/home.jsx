@@ -3,10 +3,10 @@ import { React, useState, useEffect } from 'react'
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context'
 
-import { images } from '../../constants'
-import { EmptyState, SearchInput, Trending, VideoCard } from '../../components'
-import { getAllPosts, getLatestPosts } from '../../lib/appwrite'
-import useAppWrite from '../../lib/useAppWrite'
+import { images } from '../../shared/constants'
+import { EmptyState, SearchInput, Trending, VideoCard } from "../../shared/components";
+import { getAllPosts, getLatestPosts } from '../../shared/api/appwrite'
+import useAppWrite from '../../shared/api/useAppWrite'
 import { useGlobalContext } from "../../context/GlobalProvider";
 
 
@@ -91,10 +91,6 @@ const Home = () => {
             onRefresh={onRefresh}
           />
         }
-      />
-      <StatusBar
-        backgroundColor="#161622"
-        style="light"
       />
     </SafeAreaView>
   )

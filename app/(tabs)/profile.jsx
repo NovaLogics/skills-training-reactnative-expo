@@ -3,12 +3,12 @@ import { React, useState, useEffect } from 'react'
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context'
 
-import { EmptyState, InfoBox, SearchInput, Trending, VideoCard } from '../../components'
-import { getUserPosts, signOut } from '../../lib/appwrite'
-import useAppWrite from '../../lib/useAppWrite'
+import { EmptyState, InfoBox, SearchInput, Trending, VideoCard } from "../../shared/components";
+import { getUserPosts, signOut } from '../../shared/api/appwrite'
+import useAppWrite from '../../shared/api/useAppWrite'
 import { router, useLocalSearchParams } from 'expo-router'
 import { useGlobalContext } from "../../context/GlobalProvider";
-import { icons } from '../../constants';
+import { icons } from '../../shared/constants';
 
 const Profile = () => {
   const { user, setUser, setIsLogged } = useGlobalContext();
@@ -87,10 +87,6 @@ const Profile = () => {
             subtitle="No Videos Found for this search query"
           />
         )}
-      />
-      <StatusBar
-        backgroundColor="#161622"
-        style="light"
       />
     </SafeAreaView>
   )

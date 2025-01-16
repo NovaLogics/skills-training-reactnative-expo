@@ -6,6 +6,7 @@ import EmptyState from "./EmptyState";
 import VideoCard from "./VideoCard";
 import FullScreenVideo from "./FullScreenVideo";
 import InfoBox from "./InfoBox";
+import Loader from "./Loader";
 
 export {
     CustomButton,
@@ -16,4 +17,5 @@ export {
     VideoCard,
     FullScreenVideo,
     InfoBox,
+    Loader,
 };

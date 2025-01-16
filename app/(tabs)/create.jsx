@@ -1,16 +1,16 @@
 import { View, Text, ScrollView, TouchableOpacity, Image, Alert } from 'react-native';
 import React, { useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { CustomButton, FormField } from '../../components';
+import { CustomButton, FormField } from "../../shared/components";
 import { ResizeMode, Video } from "expo-av";
-import { icons } from '../../constants';
+import { icons } from '../../shared/constants';
 import { Dimensions } from "react-native";
 import * as ImagePicker from 'expo-image-picker';
 import { router } from 'expo-router';
-import { createVideo } from '../../lib/appwrite';
+import { createVideo } from '../../shared/api/appwrite';
 import { useGlobalContext } from "../../context/GlobalProvider";
 
-const { width, height } = Dimensions.get("window");
+const { width } = Dimensions.get("window");
 
 const Create = () => {
 
