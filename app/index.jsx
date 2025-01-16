@@ -3,8 +3,8 @@ import { Text, View, ScrollView, Image } from 'react-native';
 import { Redirect, router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-import { images } from "../shared/constants";
-import { colors } from "../shared/constants";
+import { images } from '../shared/constants';
+import { colors } from '../shared/constants';
 import { CustomButton } from '../shared/components';
 import { useGlobalContext } from '../shared/context/GlobalProvider';
 
