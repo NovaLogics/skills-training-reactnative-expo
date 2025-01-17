@@ -1,6 +1,6 @@
 import { Dimensions } from 'react-native';
 import { React, useState } from 'react';
-import { ResizeMode, Video } from 'expo-av';
+import { VideoView, useVideoPlayer } from "expo-video";
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 
 import { icons } from '../constants';
@@ -19,9 +19,16 @@ const VideoCard = ({
     const { width } = Dimensions.get('window');
     const [play, setPlay] = useState(false);
 
+    const player = useVideoPlayer(video, (player) => {
+        player.showNowPlayingNotification = false;
+        player.allowsFullscreen
+        // player.loop = true;
+       // player.play();
+    });
+
     return (
         <View
-            className="flex-col items-center px-4 mb-14">
+            className="flex-col items-center px-4 mb-8">
             {/* Divider */}
             <View
                 style={{
@@ -68,26 +75,23 @@ const VideoCard = ({
 
             {/* Video || thumbnail*/}
             {play ? (
-                // Video player when play is true
-                <Video
-                    source={{ uri: video }}
-                    className="w-full h-60 rounded-xl mt-4 bg-white/10"
+                <VideoView
                     style={{
                         width: width,
                         height: 280,
+                        borderRadius: 4,
                         marginTop: 8,
                         backgroundColor: "#161622",
                     }}
-                    resizeMode={ResizeMode.CONTAIN}
-                    useNativeControls
-                    shouldPlay
-                    onPlaybackStatusUpdate={(status) => {
-                        if (status.didJustFinish) {
-                            setPlay(false);
-                        }
+                    player={player}
+                    allowsFullscreen={true}
+                    nativeControls={true}
+                    allowsPictureInPicture
+                    onError={(error) => {
+                        console.error("Error loading video:", error);
+                        setPlay(false);
                     }}
                 />
-                //  <FullScreenVideo videoUri={video} />
             ) : (
                 // Thumbnail view when video is not playing
                 <TouchableOpacity

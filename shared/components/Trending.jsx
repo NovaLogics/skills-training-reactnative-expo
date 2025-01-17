@@ -1,5 +1,4 @@
 import * as Animatable from "react-native-animatable";
-import { ResizeMode, Video } from "expo-av";
 import { useState, useEffect, memo, useRef } from "react";
 import { VideoView, useVideoPlayer } from "expo-video";
 import { FlatList, Image, ImageBackground, TouchableOpacity } from "react-native";
@@ -44,23 +43,6 @@ const TrendingItem = memo(({ activeItem, item }) => {
         >
             {play ? (
                 // Video playback view when 'play' is true
-                //      <Video
-                //      source={{ uri: item.video }}
-                //      style={{
-                //        width: 208,
-                //        height: 288,
-                //        borderRadius: 33,
-                //        marginTop: 12,
-                //        backgroundColor: "rgba(255, 255, 255, 0.1)",
-                //      }}
-                //      resizeMode={ResizeMode.CONTAIN}
-                //      useNativeControls
-                //      shouldPlay
-                //      onError={(error) => {
-                //        console.error("Error loading video:", error);
-                //        setPlay(false);
-                //      }}
-                //    />
                 <VideoView
                     style={{
                         width: 200,
