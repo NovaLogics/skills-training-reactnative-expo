@@ -29,10 +29,10 @@ const Profile = () => {
         keyExtractor={(item) => item.$id}
         // Profile header
         ListHeaderComponent={() => (
-          <View className="w-full justify-center items-center mt-6 mb-12 px-4">
+          <View className="w-full justify-center items-center mt-6 mb-2 px-4">
             {/* Logout button */}
             <TouchableOpacity
-              className="w-full items-end mb-10"
+              className="w-full items-end"
               onPress={logout}>
               <Image
                 source={icons.logout}
@@ -42,10 +42,14 @@ const Profile = () => {
             </TouchableOpacity>
             {/* User avatar */}
             <View
-              className="w-32 h-32 border border-1 border-secondary rounded-full justify-center items-center">
+              className="w-32 h-32 border border-2 border-gray-100 rounded-full justify-center items-center"
+              style={{
+                borderColor: 'rgba(255, 255, 255, 0.3)',
+                borderWidth: 2,
+              }}>
               <Image
                 source={{ uri: user?.avatar }}
-                className="w-[90%] h-[90%] rounded-full"
+                className="w-[95%] h-[95%] rounded-full"
                 resizeMode="cover"
               />
             </View>
@@ -53,11 +57,11 @@ const Profile = () => {
             <InfoBox
               title={user?.username}
               containerStyles="mt-5"
-              titleStyles="text-xl"
+              titleStyles="text-2xl"
             />
             {/* Stats */}
             <View
-              className="mt-6 flex-row">
+              className="mb-4 flex-row">
               <InfoBox
                 title={posts?.length || 0}
                 subtitle="Posts"
