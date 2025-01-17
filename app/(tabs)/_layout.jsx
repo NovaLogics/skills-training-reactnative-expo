@@ -51,7 +51,8 @@ const TabsLayout = () => {
                         backgroundColor: "#161622",
                         borderTopWidth: 1,
                         borderTopColor: "#232533",
-                        height: 76,
+                        height: 64,
+                        paddingBottom: 0,
                     },
                 }}>
                 {/* Home tab */}
@@ -60,6 +61,7 @@ const TabsLayout = () => {
                     options={{
                         title: "Home",
                         headerShown: false,
+                        tabBarShowLabel: false,
                         tabBarIcon: ({ color, focused }) => (
                             <TabIcon
                                 icon={icons.home}
@@ -76,6 +78,7 @@ const TabsLayout = () => {
                     options={{
                         title: "Create",
                         headerShown: false,
+                        tabBarShowLabel: false,
                         tabBarIcon: ({ color, focused }) => (
                             <TabIcon
                                 icon={icons.plus}
@@ -92,6 +95,7 @@ const TabsLayout = () => {
                     options={{
                         title: "Profile",
                         headerShown: false,
+                        tabBarShowLabel: false,
                         tabBarIcon: ({ color, focused }) => (
                             <TabIcon
                                 icon={icons.profile}
@@ -109,7 +113,7 @@ const TabsLayout = () => {
             />
             {/* Status bar */}
             <StatusBar
-             backgroundColor={colors.primaryBackground}
+                backgroundColor={colors.primaryBackground}
                 style="light"
             />
         </>
