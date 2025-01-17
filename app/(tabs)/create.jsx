@@ -2,7 +2,7 @@ import { router } from 'expo-router';
 import * as ImagePicker from 'expo-image-picker';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import React, { useState } from 'react';
-import { ResizeMode, Video } from "expo-av";
+import { VideoView, useVideoPlayer } from "expo-video";
 import { View, Text, ScrollView, TouchableOpacity, Image, Alert, Dimensions } from 'react-native';
 
 import { icons } from '../../shared/constants';
@@ -27,7 +27,7 @@ const Create = () => {
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: [`${selectType}`],
       allowsEditing: true,
-      aspect: [4, 3],
+      // aspect: [4, 3],
       quality: 1,
     });
 
@@ -71,13 +71,20 @@ const Create = () => {
     }
   }
 
+  const player = useVideoPlayer(form.video ?? "", (player) => {
+    player.showNowPlayingNotification = false;
+    player.allowsFullscreen
+    // player.loop = true;
+    // player.play();
+  });
+
   return (
     <SafeAreaView
       className="bg-primary h-full">
       <ScrollView
-        className="px-4 my-6">
+        className="px-4">
         <Text
-          className="text-2xl text-white font-psemibold">
+          className="text-2xl text-white font-psemibold mt-8">
           Upload Video
         </Text>
         {/* Video Title Field */}
@@ -98,12 +105,30 @@ const Create = () => {
           <TouchableOpacity
             onPress={() => openPicker(mediaType.VIDEOS)}>
             {form.video ? (
-              <Video
-                source={{ uri: form.video.uri }}
-                className="w-full h-100 rounded-2xl mt-3 bg-white/10"
-                style={{ width, height: 100, marginTop: 3, backgroundColor: "rgba(255, 255, 255, 0.1)" }}
-                resizeMode={ResizeMode.CONTAIN}
-              />
+              <View
+                style={{
+                  width: width,
+                  height: 120,
+                  borderRadius: 4,
+                  marginTop: 12,
+                  marginBottom: 4,
+                  backgroundColor: "#161622",
+                }}
+                pointerEvents="none"
+              >
+                <VideoView
+                  style={{
+                    width: width,
+                    height: 120,
+                  }}
+                  player={player}
+                  nativeControls={false}
+                  onError={(error) => {
+                    console.error("Error loading video:", error);
+                    setPlay(false);
+                  }}
+                />
+              </View>
             ) : (
               <View
                 className="w-full h-40 px-4 bg-black-100 rounded-2xl justify-center items-center">
@@ -123,7 +148,7 @@ const Create = () => {
         <View
           className="mt-7 space-y-2">
           <Text
-            className="text-base text-gray-100 font-pmedium">
+            className="text-base text-gray-100 font-pmedium mb-2">
             Thumbnail Image
           </Text>
           <TouchableOpacity
@@ -131,8 +156,8 @@ const Create = () => {
             {form.thumbnail ? (
               <Image
                 source={{ uri: form.thumbnail.uri }}
-                resizeMode="cover"
-                className="w-full h-64 rounded-2xl"
+                resizeMode="contain"
+                className="w-full h-48 rounded-2xl"
               />
             ) : (
               <View
@@ -162,7 +187,7 @@ const Create = () => {
         <CustomButton
           title="Submit & Publish"
           handlePress={submit}
-          containerStyles="w-[85%] mt-8"
+          containerStyles="w-[85%] mt-8 mb-12"
           isLoading={uploading}
         />
       </ScrollView>
