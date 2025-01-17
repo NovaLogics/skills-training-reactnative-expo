@@ -287,12 +287,90 @@ Feature-Based Modular Architecture organizes an app into independent modules bas
 [22]: https://tailwindcss.com/
 
 
-
-
-
-
+<br/>
 
 #
 # ᴠɪ ⁃ ᴘʀᴏᴊᴇᴄᴛ ɴᴏᴛᴇꜱ
 
-**N/A**
+### ⭓ Quick Start
+
+Follow these steps to set up the project on your local machine.
+
+#### 1. Prerequisites
+
+Ensure you have the following installed:
+
+- **Git**: Version control system.
+- **Node.js**: JavaScript runtime.
+- **npm**: Node Package Manager (comes with Node.js).
+
+<br/>
+
+#### 2. Cloning the Repository
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/NovaLogics/vidbox-reactnative-expo-app.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd vidbox-reactnative-expo-app
+   ```
+
+<br/>
+
+#### 3. Installation
+
+Install the project dependencies:
+```bash
+npm install
+```
+
+<br/>
+
+#### 4. Appwrite Setup ⭓ 
+
+1. Sign up for `https://appwrite.io/`
+2. Create a new project in Appwrite.
+3. Set up the following:
+   - **Database**: Create two collections:
+     - `users`
+     - `videos`
+   - **Storage Bucket**: Create a storage bucket.
+   - Add your platform data to the project.
+
+4. Refer to the **[Appwrite Setup Guide (with screenshots)](./_archive/backend-setup/)** for detailed steps.
+
+5. After setting up everything, copy the generated IDs and paste them into the configuration file:
+   - Open this file: **[`/shared/api/add-your-appwrite-config-file`](./shared/api/add-your-appwrite-config-file.js)**
+   - Add the IDs to the appropriate fields.
+
+6. Rename the file to `appwrite-config.js`:
+ 
+
+<br/>
+
+#### 5. Run the Project
+
+Start the project locally:
+```bash
+npx expo start -c
+```
+
+<br/>
+
+#### 6. Running on Expo Go
+
+1. Download the **Expo Go** app on your mobile device.
+2. Use Expo Go to scan the QR code displayed in the Terminal.
+3. The app will run on your device.
+
+<br/>
+
+---
+
+<br/>
+
+<kbd>[&nbsp; ⮝ &nbsp;  BACK TO TOP  &nbsp;&nbsp;&nbsp;](#ɪ----ᴘʀᴏᴊᴇᴄᴛ-ɪɴꜰᴏ) </kbd>
+
+---
