@@ -1,43 +1,38 @@
-import { View, Text, FlatList, Image, RefreshControl, Alert, TouchableOpacity } from 'react-native'
-import { React, useState, useEffect } from 'react'
-import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView } from 'react-native-safe-area-context'
+import { React } from 'react';
+import { router } from 'expo-router';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { View, FlatList, Image, TouchableOpacity } from 'react-native';
 
-import { EmptyState, InfoBox, SearchInput, Trending, VideoCard } from "../../shared/components";
-import { getUserPosts, signOut } from '../../shared/api/appwrite'
-import useAppWrite from '../../shared/api/useAppWrite'
-import { router, useLocalSearchParams } from 'expo-router'
-import { useGlobalContext } from "../../context/GlobalProvider";
 import { icons } from '../../shared/constants';
+import { routes } from '../../shared/constants/strings';
+import useAppwrite from '../../shared/api/useAppwrite';
+import { useGlobalContext } from "../../shared/context/GlobalProvider";
+import { getUserPosts, signOut } from '../../shared/api/appwrite';
+import { EmptyState, InfoBox, VideoCard } from "../../shared/components";
 
 const Profile = () => {
   const { user, setUser, setIsLogged } = useGlobalContext();
 
-  const { query } = useLocalSearchParams();
-
-  const { data: posts } = useAppWrite(
-    () => getUserPosts(user.$id)
-  );
+  const { data: posts } = useAppwrite(() => getUserPosts(user.$id));
 
   const logout = async () => {
     await signOut();
     setUser(null);
     setIsLogged(false);
-
-    router.replace("/sign-in");
-  }
+    router.replace(routes.SIGN_IN);
+  };
 
   return (
-    <SafeAreaView
-      className="bg-primary h-full">
+    <SafeAreaView className="bg-primary h-full">
       <FlatList
         data={posts}
         keyExtractor={(item) => item.$id}
+        // Profile header
         ListHeaderComponent={() => (
-          <View
-            className="w-full justify-center items-center mt-6 mb-12 px-4">
+          <View className="w-full justify-center items-center mt-6 mb-2 px-4">
+            {/* Logout button */}
             <TouchableOpacity
-              className="w-full items-end mb-10"
+              className="w-full items-end"
               onPress={logout}>
               <Image
                 source={icons.logout}
@@ -45,25 +40,30 @@ const Profile = () => {
                 resizeMode="contain"
               />
             </TouchableOpacity>
+            {/* User avatar */}
             <View
-              className="w-16 h-16 border border-secondary rounded-lg justify-center items-center">
+              className="w-32 h-32 border border-2 border-gray-100 rounded-full justify-center items-center"
+              style={{
+                borderColor: 'rgba(255, 255, 255, 0.3)',
+                borderWidth: 2,
+              }}>
               <Image
                 source={{ uri: user?.avatar }}
-                className="w-[90%] h-[90%] rounded-lg"
+                className="w-[95%] h-[95%] rounded-full"
                 resizeMode="cover"
               />
             </View>
-
+            {/* Username */}
             <InfoBox
               title={user?.username}
               containerStyles="mt-5"
-              titleStyles="text-lg"
+              titleStyles="text-2xl"
             />
-
+            {/* Stats */}
             <View
-              className="mt-5 flex-row">
+              className="mb-4 flex-row">
               <InfoBox
-                title={posts.length || 0}
+                title={posts?.length || 0}
                 subtitle="Posts"
                 containerStyles="mr-10"
                 titleStyles="text-lg"
@@ -76,11 +76,9 @@ const Profile = () => {
             </View>
           </View>
         )}
-        renderItem={({ item }) => (
-          <VideoCard
-            video={item}
-          />
-        )}
+        // Render video card
+        renderItem={({ item }) => <VideoCard video={item} />}
+        // Empty state
         ListEmptyComponent={() => (
           <EmptyState
             title="No Videos Found"
@@ -89,7 +87,7 @@ const Profile = () => {
         )}
       />
     </SafeAreaView>
-  )
-}
+  );
+};
 
-export default Profile
+export default Profile;
