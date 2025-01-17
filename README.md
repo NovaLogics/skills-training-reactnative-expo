@@ -37,9 +37,8 @@
 <br>
 <br>
 
+<img src="./_archive/screenshots/screen-4-home.png" width="160" height="340">
 <img src="./_archive/demo/demo-home.gif" width="180" height="320">
-<img src="./_archive/screenshots/screen-4-home.png" width="136" height="320">
-<img src="./_archive/demo/demo-create.gif" width="180" height="320">
 
 </div>
 
