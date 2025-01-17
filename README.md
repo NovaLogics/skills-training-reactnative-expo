@@ -82,17 +82,17 @@
 
 
 <p align="center">
-<img src="./_archive/screenshots/screen-1-welcome.png" width=160>
-<img src="./_archive/screenshots/screen-2-sign-in.png" width=160>
-<img src="./_archive/screenshots/screen-3-sign-up.png" width=160>
-<img src="./_archive/screenshots/screen-4-home.png" width=160>
-<img src="./_archive/screenshots/screen-4-home-scroll.png" width=160>
-<img src="./_archive/screenshots/screen-4-home-scroll-play.png" width=160>
-<img src="./_archive/screenshots/screen-4-home-trending.png" width=160>
-<img src="./_archive/screenshots/screen-5-create.png" width=160>
-<img src="./_archive/screenshots/screen-5-create-filled.png" width=160>
-<img src="./_archive/screenshots/screen-6-profile.png" width=160>
-<img src="./_archive/screenshots/screen-7-search.png" width=160>
+<img src="./_archive/screenshots/screen-1-welcome.png" width=180>
+<img src="./_archive/screenshots/screen-2-sign-in.png" width=180>
+<img src="./_archive/screenshots/screen-3-sign-up.png" width=180>
+<img src="./_archive/screenshots/screen-4-home.png" width=180>
+<img src="./_archive/screenshots/screen-4-home-scroll.png" width=180>
+<img src="./_archive/screenshots/screen-4-home-scroll-play.png" width=180>
+<img src="./_archive/screenshots/screen-4-home-trending.png" width=180>
+<img src="./_archive/screenshots/screen-5-create.png" width=180>
+<img src="./_archive/screenshots/screen-5-create-filled.png" width=180>
+<img src="./_archive/screenshots/screen-6-profile.png" width=180>
+<img src="./_archive/screenshots/screen-7-search.png" width=180>
 </p>
 
 
@@ -131,7 +131,6 @@
 
 [branch-development]:  https://github.com/NovaLogics/vidbox-reactnative-expo-app/tree/development-next
 
-<br/>
 
 #
 ### ➲ Code from the scratch ♨
@@ -142,43 +141,43 @@ Explore the branches: Stage 1–13
 
 #### Branches  
 
-1. **Init Expo Project** [**stage-01-init_expo_project**](https://github.com/NovaLogics/vidbox-reactnative-expo-app/tree/stage-01-init_expo_project)  
+1. **Init Expo Project** : [**stage-01-init_expo_project**](https://github.com/NovaLogics/vidbox-reactnative-expo-app/tree/stage-01-init_expo_project)  
    Initial setup of the Expo project.
 
-2. **Project Setup** [**stage-02-project_setup**](https://github.com/NovaLogics/vidbox-reactnative-expo-app/tree/stage-02-project_setup)  
+2. **Project Setup** : [**stage-02-project_setup**](https://github.com/NovaLogics/vidbox-reactnative-expo-app/tree/stage-02-project_setup)  
    Completed basic project setup with dependencies.
 
-3. **Project Structure** [**stage-03-project_structure**](https://github.com/NovaLogics/vidbox-reactnative-expo-app/tree/stage-03-project_structure)  
+3. **Project Structure** : [**stage-03-project_structure**](https://github.com/NovaLogics/vidbox-reactnative-expo-app/tree/stage-03-project_structure)  
    Organized folder structure for better maintainability.
 
-4. **Tabs UI** [**stage-04-feature_tabs_ui**](https://github.com/NovaLogics/vidbox-reactnative-expo-app/tree/stage-04-feature_tabs_ui)  
+4. **Tabs UI** : [**stage-04-feature_tabs_ui**](https://github.com/NovaLogics/vidbox-reactnative-expo-app/tree/stage-04-feature_tabs_ui)  
    Implemented UI for tabs navigation.
 
-5. **Intro UI** [**stage-05-feature_intro_ui**](https://github.com/NovaLogics/vidbox-reactnative-expo-app/tree/stage-05-feature_intro_ui)  
+5. **Intro UI** : [**stage-05-feature_intro_ui**](https://github.com/NovaLogics/vidbox-reactnative-expo-app/tree/stage-05-feature_intro_ui)  
    Added intro UI screens to welcome the users.
 
-6. **Auth Screens UI** [**stage-06-feature_auth_screens_ui**](https://github.com/NovaLogics/vidbox-reactnative-expo-app/tree/stage-06-feature_auth_screens_ui)  
+6. **Auth Screens UI** : [**stage-06-feature_auth_screens_ui**](https://github.com/NovaLogics/vidbox-reactnative-expo-app/tree/stage-06-feature_auth_screens_ui)  
    Designed UI for authentication screens (sign-in, sign-up).
 
-7. **Backend and Login Integration** [**stage-07-connect_backend_and_login**](https://github.com/NovaLogics/vidbox-reactnative-expo-app/tree/stage-07-connect_backend_and_login)  
+7. **Backend and Login Integration** : [**stage-07-connect_backend_and_login**](https://github.com/NovaLogics/vidbox-reactnative-expo-app/tree/stage-07-connect_backend_and_login)  
    Integrated backend services for login functionality.
 
-8. **Global State Management** [**stage-08-feature_global_state**](https://github.com/NovaLogics/vidbox-reactnative-expo-app/tree/stage-08-feature_global_state)  
+8. **Global State Management** : [**stage-08-feature_global_state**](https://github.com/NovaLogics/vidbox-reactnative-expo-app/tree/stage-08-feature_global_state)  
    Set up global state management for the app.
 
-9. **Home Screen UI** [**stage-09-feature_home_screen**](https://github.com/NovaLogics/vidbox-reactnative-expo-app/tree/stage-09-feature_home_screen)  
+9. **Home Screen UI** : [**stage-09-feature_home_screen**](https://github.com/NovaLogics/vidbox-reactnative-expo-app/tree/stage-09-feature_home_screen)  
    Designed the main home screen of the app.
 
-10. **Search Screen UI** [**stage-10-feature-search-screen**](https://github.com/NovaLogics/vidbox-reactnative-expo-app/tree/stage-10-feature-search-screen)  
+10. **Search Screen UI** : [**stage-10-feature-search-screen**](https://github.com/NovaLogics/vidbox-reactnative-expo-app/tree/stage-10-feature-search-screen)  
    Implemented UI for the search screen.
 
-11. **Profile Screen UI** [**stage-11-feature-profile-screen**](https://github.com/NovaLogics/vidbox-reactnative-expo-app/tree/stage-11-feature-profile-screen)  
+11. **Profile Screen UI** : [**stage-11-feature-profile-screen**](https://github.com/NovaLogics/vidbox-reactnative-expo-app/tree/stage-11-feature-profile-screen)  
    Designed the profile screen for the user.
 
-12. **Add Videos Feature** [**stage-12-feature-add-videos**](https://github.com/NovaLogics/vidbox-reactnative-expo-app/tree/stage-12-feature-add-videos)  
+12. **Add Videos Feature** : [**stage-12-feature-add-videos**](https://github.com/NovaLogics/vidbox-reactnative-expo-app/tree/stage-12-feature-add-videos)  
    Implemented the feature to allow users to add videos.
 
-13. **Loading View** [**stage-13-feature-loading-view**](https://github.com/NovaLogics/vidbox-reactnative-expo-app/tree/stage-13-feature-loading-view)  
+13. **Loading View** : [**stage-13-feature-loading-view**](https://github.com/NovaLogics/vidbox-reactnative-expo-app/tree/stage-13-feature-loading-view)  
    Added a loading view while data is being fetched.
 
 </details>
@@ -308,11 +307,11 @@ Ensure you have the following installed:
 
 #### 2. Cloning the Repository
 
-1. Clone the repository:
+- Clone the repository:
    ```bash
    git clone https://github.com/NovaLogics/vidbox-reactnative-expo-app.git
    ```
-2. Navigate to the project directory:
+- Navigate to the project directory:
    ```bash
    cd vidbox-reactnative-expo-app
    ```
@@ -330,22 +329,22 @@ npm install
 
 #### 4. Appwrite Setup ⭓ 
 
-1. Sign up for `https://appwrite.io/`
-2. Create a new project in Appwrite.
-3. Set up the following:
+- Sign up for `https://appwrite.io/`
+- Create a new project in Appwrite.
+- Set up the following:
    - **Database**: Create two collections:
      - `users`
      - `videos`
    - **Storage Bucket**: Create a storage bucket.
    - Add your platform data to the project.
 
-4. Refer to the **[Appwrite Setup Guide (with screenshots)](./_archive/backend-setup/)** for detailed steps.
+- Refer to the **[Appwrite Setup Guide (with screenshots)](./_archive/backend-setup/)** for detailed steps.
 
-5. After setting up everything, copy the generated IDs and paste them into the configuration file:
+- After setting up everything, copy the generated IDs and paste them into the configuration file:
    - Open this file: **[`/shared/api/add-your-appwrite-config-file`](./shared/api/add-your-appwrite-config-file.js)**
    - Add the IDs to the appropriate fields.
 
-6. Rename the file to `appwrite-config.js`:
+- Rename the file to `appwrite-config.js`:
  
 
 <br/>
@@ -361,9 +360,9 @@ npx expo start -c
 
 #### 6. Running on Expo Go
 
-1. Download the **Expo Go** app on your mobile device.
-2. Use Expo Go to scan the QR code displayed in the Terminal.
-3. The app will run on your device.
+- Download the **Expo Go** app on your mobile device.
+- Use Expo Go to scan the QR code displayed in the Terminal.
+- The app will run on your device.
 
 <br/>
 
@@ -374,3 +373,4 @@ npx expo start -c
 <kbd>[&nbsp; ⮝ &nbsp;  BACK TO TOP  &nbsp;&nbsp;&nbsp;](#ɪ----ᴘʀᴏᴊᴇᴄᴛ-ɪɴꜰᴏ) </kbd>
 
 ---
+
