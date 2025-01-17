@@ -29,7 +29,7 @@ const Home = () => {
         keyExtractor={(item) => item.$id}
         // Header component
         ListHeaderComponent={() => (
-          <View className="my-6 px-4 space-y-6 min-h-[460px]">
+          <View className={`my-6 px-4 space-y-6 min-h-[${posts.length === 0 ? "0" : "460px"}]`}>
             {/* Welcome message */}
             <View
               className="justify-between items-start flex-row mb-6">
