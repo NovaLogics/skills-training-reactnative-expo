@@ -37,15 +37,13 @@
 <br>
 <br>
 
-<img src="./_archive/screenshots/screen-4-home.png" width="240" height="540">
-<img src="./_archive/screenshots/screen-4-home-scroll-play.png" width="240" height="540">
+<img src="./_archive/demo/demo-home.gif" width="191" height="340">
+<img src="./_archive/demo/demo-create.gif" width="191" height="340">
 
 </div>
 
 
 ## ɪɪ ⁃ ᴡʜᴀᴛ ᴜꜱᴇʀꜱ ᴄᴀɴ ᴇxᴘᴇᴄᴛ
-
-### ⭓ Features
 
 ### ⭓ Features
 
@@ -60,7 +58,7 @@
 - **Responsiveness**: Smooth performance across different devices and screen sizes.
 - **Animations**: Engaging animations to improve user interaction and experience.
 - **Reusable Code Architecture**: Structured code for easy updates and maintenance.
-- 
+
 
 ##
 ### ⭓ Requirements
@@ -303,8 +301,7 @@ Ensure you have the following installed:
 - **Node.js**: JavaScript runtime.
 - **npm**: Node Package Manager (comes with Node.js).
 
-<br/>
-
+#
 #### 2. Cloning the Repository
 
 - Clone the repository:
@@ -316,8 +313,7 @@ Ensure you have the following installed:
    cd vidbox-reactnative-expo-app
    ```
 
-<br/>
-
+#
 #### 3. Installation
 
 Install the project dependencies:
@@ -325,8 +321,7 @@ Install the project dependencies:
 npm install
 ```
 
-<br/>
-
+#
 #### 4. Appwrite Setup ⭓ 
 
 - Sign up for `https://appwrite.io/`
@@ -347,8 +342,7 @@ npm install
 - Rename the file to `appwrite-config.js`:
  
 
-<br/>
-
+#
 #### 5. Run the Project
 
 Start the project locally:
@@ -356,8 +350,7 @@ Start the project locally:
 npx expo start -c
 ```
 
-<br/>
-
+#
 #### 6. Running on Expo Go
 
 - Download the **Expo Go** app on your mobile device.
